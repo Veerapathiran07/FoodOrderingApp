@@ -19,7 +19,7 @@ class Payment {
             print(" ================= ")
             print("  Payment Methods  ")
             print(" ================= ")
-            print("   ***\n\n 1.G-Pay\n\n 2.Phone-Pe\n\n 3.Paytm\n\n 4.Cash On Delivery\n\n 5.Back\n\n   ***\n\n ** Please enter the number of the payment method you want to go with ** \n")
+            print("        ***\n\n 1.G-Pay\n\n 2.Phone-Pe\n\n 3.Paytm\n\n 4.Cash On Delivery\n\n 5.Back\n\n        ***\n\n ** Please enter the number of the payment method you want to go with ** \n")
             if let operation = readLine() {
                 switch operation {
                 case "1":
@@ -61,7 +61,7 @@ class Payment {
         Operation.operation.oldOrderTotal()
         print(" ------------------------------------------ \n")
         print(" ** Please enter the options given below ** \n ")
-        print(" 1.Confirm the Order \n")
+        print(" 1.Confirm and Pay \n")
         print(" 2.Back \n ")
         print(" ------------------------------------------ \n")
         if let input = readLine() {
@@ -86,7 +86,7 @@ class Payment {
         Operation.operation.oldOrderTotal()
         print(" ------------------------------------------ \n")
         print(" ** Please enter the options given below ** \n ")
-        print(" 1.Confirm the Order \n")
+        print(" 1.Confirm and Pay \n")
         print(" 2.Back \n ")
         print(" ------------------------------------------ \n")
         if let input = readLine() {

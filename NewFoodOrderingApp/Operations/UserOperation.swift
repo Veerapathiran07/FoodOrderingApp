@@ -254,13 +254,12 @@ class Operation: Example {
             let isContinue: Bool = true
             repeat {
                 print(" ================================================ \n")
+                print("                       CART \n")
+                print(" ================================================ \n")
                 print("\(Cart)\n")
                 print(" ================================================ \n")
                 total()
                 print(" ================================================ \n")
-                print(" ================= ")
-                print("  Cart Operations ")
-                print(" ================= ")
                 print("       ***\n\n 1.Add foods \n")
                 print(" 2.Checkout \n")
                 print(" 3.Modify your cart \n")
@@ -338,12 +337,11 @@ class Operation: Example {
             let isContinue: Bool = true
             repeat {
                 print("")
+                print(" ================================================= \n")
+                print("                   Order History \n")
+                print(" ================================================= \n")
+                print(" \(OrderDetails) \n ")
                 print(" ================================================ \n")
-                print(" The foods you ordered before:\n \(OrderDetails) \n ")
-                print(" ================================================ \n")
-                print(" ==========================")
-                print("  Order History Operations ")
-                print(" ==========================")
                 print("            ***\n\n 1.CheckOut (Re-Order) \n")
                 print(" 2.Add food to order \n")
                 print(" 3.Clear the history \n")
@@ -424,8 +422,8 @@ class Operation: Example {
         return food
     }
     
-    //MARK: Common method for get id and return food
-    func addFoods() -> AllFoods {
+    //MARK: Method for get id and return food for cart
+    func addToCart() -> AllFoods {
         
         var food = AllFoods()
         
@@ -442,29 +440,54 @@ class Operation: Example {
             }
             else {
                 print(" ==  Please enter the valid id of the food  == \n")
+                cartItems.add()
+            }
+        }
+        return food
+    }
+    
+    //MARK: Method for get id and return food for order history
+    func addToHistory() -> AllFoods {
+        
+        var food = AllFoods()
+        
+        print(" ***  Enter the id of the food you want add to your cart  ***\n")
+        if let add = readLine() {
+            if let id = Int(add) {
+                if id <= Operation.operation.list.count {
+                    food  = FoodLoading().getFoodAllFoods(id: id)
+                }
+                else {
+                    print(" ==  Please enter the shown id of the food  == \n")
+                    Operation.operation.addToOrderHistory()
+                }
+            }
+            else {
+                print(" ==  Please enter the valid id of the food  == \n")
+                Operation.operation.addToOrderHistory()
             }
         }
         return food
     }
     
     
+    
     // MARK: Add food directly to order history
     func addToOrderHistory() {
         
-        let cartItems = CartItems()
         
-        let food = Operation.operation.addFoods()
+        let food = Operation.operation.addToHistory()
         let orderHistoryFood = Operation.operation.getFoodFromOrderHistory(id: food.id)
         if orderHistoryFood.id == food.id {
             print("*** Please enter the quantity ***\n")
             if let quantity = readLine() {
                 if let number = Int(quantity), let price = orderHistoryFood.price, let quantity = orderHistoryFood.quantity {
                     let oldPrice = price / quantity
-                    let newQuantity = quantity + number
-                    if newQuantity <= food.availableQuantity {
-                        food.availableQuantity = food.availableQuantity - newQuantity
-                        orderHistoryFood.quantity = newQuantity
-                        orderHistoryFood.price = oldPrice * newQuantity
+                    if number <= food.availableQuantity {
+                        food.availableQuantity = food.availableQuantity - number
+                        orderHistoryFood.quantity = quantity + number
+                        orderHistoryFood.price = oldPrice * (orderHistoryFood.quantity!)
+                        food.extraNeed()
                         print(" ** The foods are added to your order details now ** \n")
                         orderHistory()
                     }
@@ -496,6 +519,7 @@ class Operation: Example {
                         cartItems.quantity = newquantity
                         cartItems.price = new
                         OrderDetails.append(cartItems)
+                        food.extraNeed()
                         print(" ** The foods are added to your order details now ** \n")
                         orderHistory()
                     }
@@ -563,38 +587,38 @@ class Operation: Example {
         print("\(OrderDetails)")
         let isContinue: Bool = true
         repeat {
-            let food = Operation.operation.addFoods()
+            let food = Operation.operation.addToHistory()
             let orderHistoryFood = Operation.operation.getFoodFromOrderHistory(id: food.id)
-                    if orderHistoryFood.id == food.id {
-                        print(" *** Please enter the quantity *** \n")
-                        if let quantity = readLine() {
-                            if let number = Int(quantity), let price = orderHistoryFood.price, let quantity = orderHistoryFood.quantity {
-                                food.availableQuantity = food.availableQuantity + quantity
-                                let oldPrice = price / quantity
-                                if number <= food.availableQuantity {
-                                    orderHistoryFood.quantity =  number
-                                    orderHistoryFood.price = oldPrice * number
-                                    food.availableQuantity = food.availableQuantity - number
-                                    print(" ** Quantity modified successfully ** \n")
-                                    print("\(OrderDetails)")
-                                    edit()
-                                }
-                                if (food.availableQuantity <= 0) {
-                                    food.availableQuantity = 0
-                                    print(" ** Not much quantity available...Available Quantity => \(food.availableQuantity) ** \n")
-                                    edit()
-                                }
-                                else {
-                                    print(" ** Not much quantity available...Available Quantity => \(food.availableQuantity) ** \n")
-                                    modifyQuantityInOrderHistory()
-                                }
-                            }
-                            else {
-                                print(" == Please enter valid quantity == \n")
-                                modifyQuantityInOrderHistory()
-                            }
+            if orderHistoryFood.id == food.id {
+                print(" *** Please enter the quantity *** \n")
+                if let quantity = readLine() {
+                    if let number = Int(quantity), let price = orderHistoryFood.price, let quantity = orderHistoryFood.quantity {
+                        food.availableQuantity = food.availableQuantity + quantity
+                        let oldPrice = price / quantity
+                        if number <= food.availableQuantity {
+                            orderHistoryFood.quantity =  number
+                            orderHistoryFood.price = oldPrice * number
+                            food.availableQuantity = food.availableQuantity - number
+                            print(" ** Quantity modified successfully ** \n")
+                            print("\(OrderDetails)")
+                            edit()
+                        }
+                        if (food.availableQuantity <= 0) {
+                            food.availableQuantity = 0
+                            print(" ** Not much quantity available...Available Quantity => \(food.availableQuantity) ** \n")
+                            edit()
+                        }
+                        else {
+                            print(" ** Not much quantity available...Available Quantity => \(food.availableQuantity) ** \n")
+                            modifyQuantityInOrderHistory()
                         }
                     }
+                    else {
+                        print(" == Please enter valid quantity == \n")
+                        modifyQuantityInOrderHistory()
+                    }
+                }
+            }
             else if count < 2 {
                 count = count + 1
                 print(" == Please enter shown ID's only == \n")
@@ -603,10 +627,10 @@ class Operation: Example {
                 print(" == You entered the wrong ID many times == \n")
                 edit()
             }
-    } while isContinue
+        } while isContinue
     }
-
-
+    
+    
     
     // MARK: Again order the same foods
     func reOrderFromOrderHistory() {
@@ -687,7 +711,7 @@ class Operation: Example {
         
         allFoods.offerCheck(newPrice: newPrice)
         
-//        cartItems.offerCheck(quantity: quantity)
+        //        cartItems.offerCheck(quantity: quantity)
     }
     
     func oldOrderTotal() {
@@ -716,9 +740,9 @@ class UserOperation {
         
         let isContinue: Bool = true
         repeat {
-            print(" ======================================= ")
-            print(" ****** Welcome to the Food World ******")
-            print(" ======================================= ")
+            print(" ======================================= \n")
+            print(" ****** Welcome to the Food World ******\n")
+            print(" ======================================= \n")
             print("                   ***\n\n 1.OrderFoods\n\n 2.New Offers\n\n 3.Cart\n\n 4.Order History\n\n 5.Back To SignUp Page\n\n                   ***\n ")
             print(" ** Please enter the number of the Item you want to Explore ** \n ")
             if let new = readLine() {
@@ -752,12 +776,12 @@ extension Operation {
         
         let isContinue: Bool = true
         repeat {
-//            print(" ---------------------------------------------------------------------------------------------- \n")
-//            print("                               ** Only get one offer at a time **                               \n ")
-            print(" ---------------------------------------------------------------------------------------------- \n")
-            print(" % Order more than 500Rs to get 50Rs off % \n")
-//            print(" % Buy one food more than 2 quantity to get extra one quantity of that food at the same price % \n")
-            print(" ---------------------------------------------------------------------------------------------- \n")
+            //            print(" ---------------------------------------------------------------------------------------------- \n")
+            //            print("                               ** Only get one offer at a time **                               \n ")
+            print(" ------------------------------------------- \n")
+            print("  % Order more than 500Rs to get 50Rs off % \n")
+            //            print(" % Buy one food more than 2 quantity to get extra one quantity of that food at the same price % \n")
+            print(" ------------------------------------------- \n")
             print("Back == Enter 1 \n ")
             if let back = readLine(){
                 if (Int(back)) == 1 {

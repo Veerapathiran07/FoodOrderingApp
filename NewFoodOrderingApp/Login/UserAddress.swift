@@ -195,42 +195,42 @@ class GetUserAddress {
                 switch operation {
                 case "1":
                     print(" Name = \(address.name) \n")
-                    print(" ** Enter new name ** ")
+                    print(" ** Enter new name ** \n")
                     let name = readLine()
                     address.name = name!
-                    print(" Name changed successfully \n")
+                    print(" ** Name changed successfully **\n")
                     showAddress()
                 case "2":
                     print(" Mobile Number = \(address.mobileNumber) \n")
-                    print(" ** Enter new mobile number ** ")
+                    print(" ** Enter new mobile number ** \n")
                     let number = readLine()
                     if let mobileNumber = Int(number!) {
                         address.mobileNumber = mobileNumber
-                        print(" Mobile Number changed Successfully \n")
+                        print(" ** Mobile Number changed Successfully **\n")
                         showAddress()
                     }
                 case "3":
                     print(" Door Number = \(address.address[0].buildingNumber) \n")
-                    print(" Enter new door number ** ")
+                    print(" ** Enter new door number ** \n")
                     let number = readLine()
                     if let buildingNumber = Int(number!){
                         address.address[0].buildingNumber = buildingNumber
-                        print(" Door Number changed Successfully \n")
+                        print(" ** Door Number changed Successfully **\n")
                         showAddress()
                     }
                 case "4":
                     print(" Street Name = \(address.address[0].streetName) \n")
-                    print(" ** Enter new street name ** ")
+                    print(" ** Enter new street name ** \n")
                     let streetName = readLine()
                     address.address[0].streetName = streetName!
-                    print(" Street Name changed successfully \n")
+                    print(" ** Street Name changed successfully **\n")
                     showAddress()
                 case "5":
                     print(" City Name = \(address.address[0].cityName) \n")
                     print(" Enter new city name")
                     let cityName = readLine()
                     address.address[0].cityName = cityName!
-                    print(" City Name changed successfully \n")
+                    print(" ** City Name changed successfully **\n")
                     showAddress()
                 case "6" :
                     print(" Postal Code = \(address.address[0].postalCode) \n")
@@ -238,13 +238,13 @@ class GetUserAddress {
                     let number = readLine()
                     if let postalCode = Int(number!) {
                         address.address[0].postalCode = postalCode
-                        print(" Postal Code changed successfully \n")
+                        print(" ** Postal Code changed successfully **\n")
                         showAddress()
                     }
                 case "7":
                     showAddress()
                 default:
-                    print(" ==  Please enter a valid input to proceed  == ")
+                    print(" ==  Please enter a valid input to proceed  == \n")
                 }
             }
         } while isContinue
@@ -252,8 +252,9 @@ class GetUserAddress {
     
     //MARK: Method for show the whole address
     func showAddress() {
-        print("\n ** Address You Entered **")
-        print(" ======================================= \n")
+        print(" ======================================== \n")
+        print("               Your Address \n")
+        print(" ======================================== \n")
         print(" Name : \(addressArray[0].name)")
         print(" Mobile Number : \(addressArray[0].mobileNumber)")
         print(" Building Number : \(addressArray[0].address[0].buildingNumber)")
@@ -264,12 +265,9 @@ class GetUserAddress {
         
         let isContinue: Bool = true
         repeat {
-            print(" ==================== ")
-            print("  Address Operations ")
-            print(" ==================== ")
-            print("         ***\n\n 1.Confirm the Address and Go to Payment \n")
+            print("       ***\n\n 1.Confirm the Address and Go to Payment \n")
             print(" 2.Change the Address \n")
-            print(" 3.Back\n\n         *** \n")
+            print(" 3.Back\n\n       *** \n")
             print(" ** Please enter the number of the Item you want to go through ** \n")
             if let input = readLine() {
                 switch input {

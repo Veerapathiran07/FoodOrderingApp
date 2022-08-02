@@ -33,10 +33,11 @@ class Juice: AllFoods {
         
         print(" ** Enter the number of the option given below ** \n")
         print(" 1.If you want more IceCubes \n")
-        print(" 2.If you don't want this ")
+        print(" 2.If you don't want this \n")
         let new = readLine()
         if Int(new!) == 1 || Int(new!) == 2  {
-            print(" \\  Thank you for choosing  // \n")        }
+            print(" **  Thank you for choosing  ** \n")
+        }
         else {
             print(" Enter a valid number")
         }

@@ -46,7 +46,7 @@ class CartItems: CustomStringConvertible {
         
         let cartItems = CartItems()
         
-        let food = Operation.operation.addFoods()
+        let food = Operation.operation.addToCart()
         let cartFood = cartItems.getFoodFromCart(id: food.id)
         if cartFood.id == food.id {
             print(" *** Please enter the quantity ***\n")
@@ -165,7 +165,7 @@ class CartItems: CustomStringConvertible {
         print("\(Cart)")
         let isContinue: Bool = true
         repeat {
-            let food = Operation.operation.addFoods()
+            let food = Operation.operation.addToCart()
             let cartFood = CartItems().getFoodFromCart(id: food.id)
             if cartFood.id == food.id {
                 print(" *** Please enter the quantity ***")

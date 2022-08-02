@@ -9,6 +9,8 @@ import Foundation
 
 
 FoodLoading().loadAllFoods(completionHandler: { (succes) -> Void in
+    print(" Loading...")
+    sleep(3)
     if succes {
         
         let userOperation = UserOperation()
