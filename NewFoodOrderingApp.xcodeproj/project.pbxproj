@@ -1,0 +1,365 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EB55729A287438BB0086CE2D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB557299287438BB0086CE2D /* main.swift */; };
+		EB5572A1287438F60086CE2D /* CartItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5572A0287438F60086CE2D /* CartItems.swift */; };
+		EB5572A3287439260086CE2D /* AdminOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5572A2287439260086CE2D /* AdminOperation.swift */; };
+		EB5572A5287439470086CE2D /* AllFoods.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5572A4287439470086CE2D /* AllFoods.swift */; };
+		EB5572A72874396F0086CE2D /* UserOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5572A62874396F0086CE2D /* UserOperation.swift */; };
+		EB5572AB287439C60086CE2D /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5572AA287439C60086CE2D /* UserDetails.swift */; };
+		EB5572AD287439E10086CE2D /* AdminDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5572AC287439E10086CE2D /* AdminDetails.swift */; };
+		EB5572AF287439FB0086CE2D /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5572AE287439FB0086CE2D /* Login.swift */; };
+		EB5572B128743AA20086CE2D /* NonVeg.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5572B028743AA20086CE2D /* NonVeg.swift */; };
+		EB5572B328743AB90086CE2D /* Veg.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5572B228743AB90086CE2D /* Veg.swift */; };
+		EB5572B528743AEE0086CE2D /* Juice.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5572B428743AEE0086CE2D /* Juice.swift */; };
+		EB5572B728743B140086CE2D /* IceCreams.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5572B628743B140086CE2D /* IceCreams.swift */; };
+		EB5572B928743B7E0086CE2D /* LoadFoods.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5572B828743B7E0086CE2D /* LoadFoods.swift */; };
+		EB7762BD288A8188001690D7 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7762BC288A8188001690D7 /* Payment.swift */; };
+		EB97830B288023B900C26F48 /* UserAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB97830A288023B900C26F48 /* UserAddress.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EB557294287438BB0086CE2D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		EB557296287438BB0086CE2D /* NewFoodOrderingApp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = NewFoodOrderingApp; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB557299287438BB0086CE2D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		EB5572A0287438F60086CE2D /* CartItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItems.swift; sourceTree = "<group>"; };
+		EB5572A2287439260086CE2D /* AdminOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminOperation.swift; sourceTree = "<group>"; };
+		EB5572A4287439470086CE2D /* AllFoods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllFoods.swift; sourceTree = "<group>"; };
+		EB5572A62874396F0086CE2D /* UserOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOperation.swift; sourceTree = "<group>"; };
+		EB5572AA287439C60086CE2D /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
+		EB5572AC287439E10086CE2D /* AdminDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDetails.swift; sourceTree = "<group>"; };
+		EB5572AE287439FB0086CE2D /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		EB5572B028743AA20086CE2D /* NonVeg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonVeg.swift; sourceTree = "<group>"; };
+		EB5572B228743AB90086CE2D /* Veg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Veg.swift; sourceTree = "<group>"; };
+		EB5572B428743AEE0086CE2D /* Juice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Juice.swift; sourceTree = "<group>"; };
+		EB5572B628743B140086CE2D /* IceCreams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IceCreams.swift; sourceTree = "<group>"; };
+		EB5572B828743B7E0086CE2D /* LoadFoods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFoods.swift; sourceTree = "<group>"; };
+		EB7762BC288A8188001690D7 /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
+		EB97830A288023B900C26F48 /* UserAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAddress.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EB557293287438BB0086CE2D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EB55728D287438BB0086CE2D = {
+			isa = PBXGroup;
+			children = (
+				EB557298287438BB0086CE2D /* NewFoodOrderingApp */,
+				EB557297287438BB0086CE2D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EB557297287438BB0086CE2D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EB557296287438BB0086CE2D /* NewFoodOrderingApp */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EB557298287438BB0086CE2D /* NewFoodOrderingApp */ = {
+			isa = PBXGroup;
+			children = (
+				EB557299287438BB0086CE2D /* main.swift */,
+				EB5572A4287439470086CE2D /* AllFoods.swift */,
+				EB5572A0287438F60086CE2D /* CartItems.swift */,
+				EB5572BC28743E6F0086CE2D /* Foods */,
+				EB5572BA28743DA50086CE2D /* Operations */,
+				EB5572BB28743DD70086CE2D /* Login */,
+			);
+			path = NewFoodOrderingApp;
+			sourceTree = "<group>";
+		};
+		EB5572BA28743DA50086CE2D /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				EB5572A62874396F0086CE2D /* UserOperation.swift */,
+				EB5572A2287439260086CE2D /* AdminOperation.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		EB5572BB28743DD70086CE2D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				EB5572AA287439C60086CE2D /* UserDetails.swift */,
+				EB5572AC287439E10086CE2D /* AdminDetails.swift */,
+				EB5572AE287439FB0086CE2D /* Login.swift */,
+				EB97830A288023B900C26F48 /* UserAddress.swift */,
+				EB7762BC288A8188001690D7 /* Payment.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		EB5572BC28743E6F0086CE2D /* Foods */ = {
+			isa = PBXGroup;
+			children = (
+				EB5572B228743AB90086CE2D /* Veg.swift */,
+				EB5572B028743AA20086CE2D /* NonVeg.swift */,
+				EB5572B628743B140086CE2D /* IceCreams.swift */,
+				EB5572B428743AEE0086CE2D /* Juice.swift */,
+				EB5572B828743B7E0086CE2D /* LoadFoods.swift */,
+			);
+			path = Foods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EB557295287438BB0086CE2D /* NewFoodOrderingApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB55729D287438BB0086CE2D /* Build configuration list for PBXNativeTarget "NewFoodOrderingApp" */;
+			buildPhases = (
+				EB557292287438BB0086CE2D /* Sources */,
+				EB557293287438BB0086CE2D /* Frameworks */,
+				EB557294287438BB0086CE2D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NewFoodOrderingApp;
+			productName = NewFoodOrderingApp;
+			productReference = EB557296287438BB0086CE2D /* NewFoodOrderingApp */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EB55728E287438BB0086CE2D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					EB557295287438BB0086CE2D = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = EB557291287438BB0086CE2D /* Build configuration list for PBXProject "NewFoodOrderingApp" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EB55728D287438BB0086CE2D;
+			productRefGroup = EB557297287438BB0086CE2D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EB557295287438BB0086CE2D /* NewFoodOrderingApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EB557292287438BB0086CE2D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB5572A1287438F60086CE2D /* CartItems.swift in Sources */,
+				EB5572A72874396F0086CE2D /* UserOperation.swift in Sources */,
+				EB5572B728743B140086CE2D /* IceCreams.swift in Sources */,
+				EB5572A5287439470086CE2D /* AllFoods.swift in Sources */,
+				EB5572B128743AA20086CE2D /* NonVeg.swift in Sources */,
+				EB7762BD288A8188001690D7 /* Payment.swift in Sources */,
+				EB5572AD287439E10086CE2D /* AdminDetails.swift in Sources */,
+				EB5572B328743AB90086CE2D /* Veg.swift in Sources */,
+				EB5572AB287439C60086CE2D /* UserDetails.swift in Sources */,
+				EB97830B288023B900C26F48 /* UserAddress.swift in Sources */,
+				EB5572AF287439FB0086CE2D /* Login.swift in Sources */,
+				EB55729A287438BB0086CE2D /* main.swift in Sources */,
+				EB5572B528743AEE0086CE2D /* Juice.swift in Sources */,
+				EB5572A3287439260086CE2D /* AdminOperation.swift in Sources */,
+				EB5572B928743B7E0086CE2D /* LoadFoods.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		EB55729B287438BB0086CE2D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EB55729C287438BB0086CE2D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		EB55729E287438BB0086CE2D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		EB55729F287438BB0086CE2D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EB557291287438BB0086CE2D /* Build configuration list for PBXProject "NewFoodOrderingApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB55729B287438BB0086CE2D /* Debug */,
+				EB55729C287438BB0086CE2D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB55729D287438BB0086CE2D /* Build configuration list for PBXNativeTarget "NewFoodOrderingApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB55729E287438BB0086CE2D /* Debug */,
+				EB55729F287438BB0086CE2D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EB55728E287438BB0086CE2D /* Project object */;
+}
