@@ -13,7 +13,7 @@ FoodLoading().loadAllFoods(completionHandler: { (succes) -> Void in
     sleep(3)
     if succes {
         
-        let userOperation = UserOperation()
+        let userOperation = Operation()
         
         userOperation.start()
     }

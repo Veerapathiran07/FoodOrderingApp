@@ -44,7 +44,7 @@ class AdminOperation {
     
     func addNewFoods() {
         
-        print ("\(Operation.operation.list)")
+        print ("\(list)")
         let isContinue: Bool = true
         repeat {
             print(" ** Enter Id for the food ** ")
@@ -56,14 +56,14 @@ class AdminOperation {
     
     
     func deleteFoods() {
-        print ("\(Operation.operation.list)")
+        print ("\(list)")
         let isContinue: Bool = true
         repeat {
             print(" Enter The ID of the food you want to delete ")
             if let id = readLine() {
                 if let number = Int(id) {
-                    if let Index = Operation.operation.list.firstIndex(where: {$0.id == number}){
-                        Operation.operation.list.remove(at: Index)
+                    if let Index = list.firstIndex(where: {$0.id == number}){
+                        list.remove(at: Index)
                         print("** Entered food item is deleted **\n")
                         print (" ** Again you want to delete food - Enter number 1 ** ")
                         print(" ** Back - Enter number 2 ** ")

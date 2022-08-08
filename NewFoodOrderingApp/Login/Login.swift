@@ -16,7 +16,7 @@ class Login {
 
     let newApp = OpenApp ()
 
-    let userOperation = UserOperation()
+    let userOperation = Operation()
 
     let adminOperation = AdminOperation()
 
@@ -96,7 +96,7 @@ class OpenApp {
 
     func open() {
 
-        let userOperation = UserOperation()
+        let userOperation = Operation()
         
         print(" ----------------------------- \n")
         print(" ==  Working  In  Progress  == \n")

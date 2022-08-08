@@ -8,6 +8,7 @@
 import Foundation
 
 
+var list = [AllFoods]()
 
 
 // MARK: FOODS
@@ -28,7 +29,7 @@ class AllFoods: CustomStringConvertible {
     
     
     func extraNeed() {
-        //        print(" If anything you need extra with your food \n")
+        
     }
     
     

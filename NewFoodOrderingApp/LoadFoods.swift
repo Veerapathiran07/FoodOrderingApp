@@ -104,8 +104,8 @@ class FoodLoading {
     }
     
     func getFoodAllFoods(id: Int) -> AllFoods {
-        var food: AllFoods = Operation.operation.list[1]
-        for i in Operation.operation.list {
+        var food: AllFoods = list[1]
+        for i in list {
             if i.id == id {
                 food = i
             }
@@ -115,7 +115,7 @@ class FoodLoading {
     
     func loadAllFoods (completionHandler:( _ success: Bool) -> Void) {
         
-        let Foods: [AllFoods] = Operation.operation.foodsLoading()
+        let Foods: [AllFoods] = UserOperation.operation.foodsLoading()
         
         if Foods.isEmpty {
             completionHandler(false)

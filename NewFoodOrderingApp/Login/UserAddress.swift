@@ -276,7 +276,7 @@ class GetUserAddress {
                 case "2" :
                     editAddress()
                 case "3" :
-                    Operation.operation.showCart()
+                    UserOperation.operation.showCart()
                 default :
                     print(" == Enter valid number to proceed == \n")
                     showAddress()

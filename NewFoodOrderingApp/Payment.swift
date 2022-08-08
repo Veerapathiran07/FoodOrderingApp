@@ -57,8 +57,8 @@ class Payment {
     func cod() {
         let isContinue: Bool = true
         repeat {
-        print("\(Operation.operation.OrderDetails)\n")
-        Operation.operation.oldOrderTotal()
+        print("\(OrderDetails)\n")
+        UserOperation.operation.oldOrderTotal()
         print(" ------------------------------------------ \n")
         print(" ** Please enter the options given below ** \n ")
         print(" 1.Confirm and Pay \n")
@@ -68,7 +68,7 @@ class Payment {
             if (Int(input)) == 1 {
                 print(" ** Order Placed Successfully ** \n")
                 Cart.removeAll()
-                UserOperation().start()
+                Operation().start()
             }
             if (Int(input)) == 2 {
                 print("Payment Cancelled!")
@@ -82,8 +82,8 @@ class Payment {
     func payment() {
         let isContinue: Bool = true
         repeat {
-        print("\(Operation.operation.OrderDetails)\n")
-        Operation.operation.oldOrderTotal()
+            print("\(OrderDetails)\n")
+        UserOperation.operation.oldOrderTotal()
         print(" ------------------------------------------ \n")
         print(" ** Please enter the options given below ** \n ")
         print(" 1.Confirm and Pay \n")
@@ -94,8 +94,7 @@ class Payment {
                 print(" ** Payment done! ** \n")
                 print(" ** Order Placed Successfully ** \n")
                 Cart.removeAll()
-//                afterOrder()
-               UserOperation().start()
+               Operation().start()
                 
             }
             if (Int(input)) == 2 {
@@ -142,7 +141,7 @@ func rating() {
     if let input = readLine() {
         if (Int(input)) == 1 || (Int(input)) == 2 || (Int(input)) == 3 || (Int(input)) == 4 || (Int(input)) == 5 {
             print(" ** Thank You For Order Food **\n")
-            UserOperation().start()
+            Operation().start()
         }
         else {
             print(" Invalid Input ")
