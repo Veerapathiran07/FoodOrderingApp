@@ -23,7 +23,7 @@
 		EB7762BD288A8188001690D7 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7762BC288A8188001690D7 /* Payment.swift */; };
 		EB97830B288023B900C26F48 /* UserAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB97830A288023B900C26F48 /* UserAddress.swift */; };
 		EBB9D09E28A0E4D0001532B9 /* OrderHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB9D09D28A0E4D0001532B9 /* OrderHistory.swift */; };
-		EBB9D0A128A0E8EA001532B9 /* UserOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB9D0A028A0E8EA001532B9 /* UserOperation.swift */; };
+		EBB9D0A128A0E8EA001532B9 /* Foods.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB9D0A028A0E8EA001532B9 /* Foods.swift */; };
 		EBE9DF57289D39A10077FACA /* CartOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE9DF56289D39A00077FACA /* CartOperations.swift */; };
 		EBE9DF59289D4C6C0077FACA /* OrderHistoryOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE9DF58289D4C6C0077FACA /* OrderHistoryOperation.swift */; };
 /* End PBXBuildFile section */
@@ -58,7 +58,7 @@
 		EB7762BC288A8188001690D7 /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		EB97830A288023B900C26F48 /* UserAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAddress.swift; sourceTree = "<group>"; };
 		EBB9D09D28A0E4D0001532B9 /* OrderHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistory.swift; sourceTree = "<group>"; };
-		EBB9D0A028A0E8EA001532B9 /* UserOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOperation.swift; sourceTree = "<group>"; };
+		EBB9D0A028A0E8EA001532B9 /* Foods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foods.swift; sourceTree = "<group>"; };
 		EBE9DF56289D39A00077FACA /* CartOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartOperations.swift; sourceTree = "<group>"; };
 		EBE9DF58289D4C6C0077FACA /* OrderHistoryOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,12 +94,11 @@
 			isa = PBXGroup;
 			children = (
 				EB557299287438BB0086CE2D /* main.swift */,
-				EB7762BC288A8188001690D7 /* Payment.swift */,
-				EB5572B828743B7E0086CE2D /* LoadFoods.swift */,
 				EB5572BC28743E6F0086CE2D /* Foods */,
 				EBB9D09F28A0E849001532B9 /* Categories */,
 				EB5572BA28743DA50086CE2D /* Operations */,
 				EB5572BB28743DD70086CE2D /* Login */,
+				EBB9D0A228A0F2E7001532B9 /* Payment */,
 			);
 			path = NewFoodOrderingApp;
 			sourceTree = "<group>";
@@ -108,7 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				EB5572A62874396F0086CE2D /* Operation.swift */,
-				EBB9D0A028A0E8EA001532B9 /* UserOperation.swift */,
 				EBE9DF56289D39A00077FACA /* CartOperations.swift */,
 				EBE9DF58289D4C6C0077FACA /* OrderHistoryOperation.swift */,
 				EB5572A2287439260086CE2D /* AdminOperation.swift */,
@@ -130,6 +128,7 @@
 		EB5572BC28743E6F0086CE2D /* Foods */ = {
 			isa = PBXGroup;
 			children = (
+				EBB9D0A028A0E8EA001532B9 /* Foods.swift */,
 				EB5572A4287439470086CE2D /* AllFoods.swift */,
 				EB5572A0287438F60086CE2D /* CartItems.swift */,
 				EBB9D09D28A0E4D0001532B9 /* OrderHistory.swift */,
@@ -144,8 +143,17 @@
 				EB5572B028743AA20086CE2D /* NonVeg.swift */,
 				EB5572B628743B140086CE2D /* IceCreams.swift */,
 				EB5572B428743AEE0086CE2D /* Juice.swift */,
+				EB5572B828743B7E0086CE2D /* LoadFoods.swift */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		EBB9D0A228A0F2E7001532B9 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				EB7762BC288A8188001690D7 /* Payment.swift */,
+			);
+			path = Payment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,7 +222,7 @@
 				EB7762BD288A8188001690D7 /* Payment.swift in Sources */,
 				EBE9DF59289D4C6C0077FACA /* OrderHistoryOperation.swift in Sources */,
 				EB5572AD287439E10086CE2D /* AdminDetails.swift in Sources */,
-				EBB9D0A128A0E8EA001532B9 /* UserOperation.swift in Sources */,
+				EBB9D0A128A0E8EA001532B9 /* Foods.swift in Sources */,
 				EB5572B328743AB90086CE2D /* Veg.swift in Sources */,
 				EB5572AB287439C60086CE2D /* UserDetails.swift in Sources */,
 				EB97830B288023B900C26F48 /* UserAddress.swift in Sources */,

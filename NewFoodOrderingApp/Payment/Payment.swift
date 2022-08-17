@@ -57,25 +57,24 @@ class Payment {
     func cod() {
         let isContinue: Bool = true
         repeat {
-        print("\(OrderDetails)\n")
-        UserOperation.operation.oldOrderTotal()
-        print(" ------------------------------------------ \n")
-        print(" ** Please enter the options given below ** \n ")
-        print(" 1.Confirm and Pay \n")
-        print(" 2.Back \n ")
-        print(" ------------------------------------------ \n")
-        if let input = readLine() {
-            if (Int(input)) == 1 {
-                print(" ** Order Placed Successfully ** \n")
-                Cart.removeAll()
-                Operation().start()
+            print("\(OrderDetails)\n")
+            OrderHistoryOperation().oldOrderTotal()
+            print(" ------------------------------------------ \n")
+            print(" ** Please enter the options given below ** \n ")
+            print(" 1.Confirm and Pay \n")
+            print(" 2.Back \n ")
+            print(" ------------------------------------------ \n")
+            if let input = readLine() {
+                if (Int(input)) == 1 {
+                    print(" ** Order Placed Successfully ** \n")
+                    new().one()
+                }
+                if (Int(input)) == 2 {
+                    print("Payment Cancelled!")
+                    paymentMethod()
+                }
             }
-            if (Int(input)) == 2 {
-                print("Payment Cancelled!")
-                paymentMethod()
-            }
-        }
-    } while isContinue
+        } while isContinue
     }
     
     // MARK: Common method for online payments
@@ -83,26 +82,33 @@ class Payment {
         let isContinue: Bool = true
         repeat {
             print("\(OrderDetails)\n")
-        UserOperation.operation.oldOrderTotal()
-        print(" ------------------------------------------ \n")
-        print(" ** Please enter the options given below ** \n ")
-        print(" 1.Confirm and Pay \n")
-        print(" 2.Back \n ")
-        print(" ------------------------------------------ \n")
-        if let input = readLine() {
-            if (Int(input)) == 1 {
-                print(" ** Payment done! ** \n")
-                print(" ** Order Placed Successfully ** \n")
-                Cart.removeAll()
-               Operation().start()
-                
+            OrderHistoryOperation().oldOrderTotal()
+            print(" ------------------------------------------ \n")
+            print(" ** Please enter the options given below ** \n ")
+            print(" 1.Confirm and Pay \n")
+            print(" 2.Back \n ")
+            print(" ------------------------------------------ \n")
+            if let input = readLine() {
+                if (Int(input)) == 1 {
+                    print(" ** Payment done! ** \n")
+                    print(" ** Order Placed Successfully ** \n")
+                    new().one()
+                }
+                if (Int(input)) == 2 {
+                    print(" == Payment Cancelled! == \n")
+                    paymentMethod()
+                }
             }
-            if (Int(input)) == 2 {
-                print(" == Payment Cancelled! == \n")
-                paymentMethod()
-            }
-        }
         } while isContinue
+    }
+    
+}
+
+class new {
+    
+    func one() {
+        Cart.removeAll()
+        Operation().start()
     }
     
 }

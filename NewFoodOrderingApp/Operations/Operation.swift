@@ -26,13 +26,13 @@ class Operation {
             if let new = readLine() {
                 switch new {
                 case "1":
-                    UserOperation.operation.orderFoods()
+                    Foods.foods.orderFoods()
                 case "2":
-                    UserOperation.operation.offers()
+                    Foods.foods.offers()
                 case "3":
-                    UserOperation.operation.showCart()
+                    CartOperations().showCart()
                 case "4":
-                    UserOperation.operation.orderHistory()
+                    OrderHistoryOperation().orderHistory()
                 case "5":
                     newApp.open()
                 default:

@@ -15,7 +15,6 @@ var Cart : [CartItems] = []
 
 class CartItems: CustomStringConvertible {
     
-    
     var id : Int?
     var foodName : String?
     var quantity : Int?
@@ -56,8 +55,7 @@ class CartItems: CustomStringConvertible {
             cartFood.quantity = number + (cartFood.quantity!)
             cartFood.price = cartFood.price! * (cartFood.quantity!)
             food.extraNeed()
-            print(" The Foods are added to your cart:\n ")
-            UserOperation.operation.showCart()
+            CartOperations().addPrinting()
         }
         else {
             cartItems.id = food.id
@@ -67,8 +65,7 @@ class CartItems: CustomStringConvertible {
             Cart.append(cartItems)
             food.availableQuantity = food.availableQuantity - number
             food.extraNeed()
-            print(" The Foods are added to your cart:\n ")
-            UserOperation.operation.showCart()
+            CartOperations().addPrinting()
         }
     }
  
@@ -77,8 +74,7 @@ class CartItems: CustomStringConvertible {
     
     func delete(Index: Int) {
         Cart.remove(at: Index)
-        print(" ***  Entered food item is deleted  *** \n")
-        UserOperation.operation.showCart()
+        CartOperations().deletePrinting()
     }
     
     
@@ -89,9 +85,7 @@ class CartItems: CustomStringConvertible {
         cartFood.quantity =  number
         cartFood.price = oldPrice * number
         food.availableQuantity = food.availableQuantity - number
-        print(" ** Quantity modified successfully ** \n")
-        print("\(Cart)\n")
-        UserOperation.operation.modify()
+        CartOperations().modifyPrinting()
     }
     
 }

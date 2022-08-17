@@ -29,7 +29,6 @@ class AllFoods: CustomStringConvertible {
     
     
     func extraNeed() {
-        
     }
     
     

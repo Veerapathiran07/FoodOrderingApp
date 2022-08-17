@@ -9,7 +9,7 @@ import Foundation
 
 
 FoodLoading().loadAllFoods(completionHandler: { (succes) -> Void in
-    print(" Loading...")
+    print(" Loading...\n")
     sleep(3)
     if succes {
         

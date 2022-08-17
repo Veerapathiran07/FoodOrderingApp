@@ -17,7 +17,7 @@ class OrderHistoryOperation {
         
         var food = AllFoods()
         
-        print(" ***  Enter the id of the food you want add to your cart  ***\n")
+        print(" ***  Enter the id of the food you want add to your order history  ***\n")
         if let add = readLine() {
             if let id = Int(add) {
                 if id <= list.count {
@@ -31,7 +31,7 @@ class OrderHistoryOperation {
                             if (food.availableQuantity <= 0) {
                                 food.availableQuantity = 0
                                 print(" ** Not much quantity available...Available Quantity => \(food.availableQuantity) ** \n")
-                                UserOperation.operation.edit()
+                                edit()
                             }
                             else {
                                 print(" ** Not much quantity available...Available Quantity => \(food.availableQuantity) ** \n")
@@ -81,7 +81,7 @@ class OrderHistoryOperation {
                     }
                     else {
                         print(" == You entered wrong ID many times == \n")
-                        UserOperation.operation.edit()
+                        edit()
                     }
                 }
                 else if deleteCount < 2 {
@@ -90,14 +90,14 @@ class OrderHistoryOperation {
                 }
                 else {
                     print(" == You entered wrong ID many times == \n")
-                    UserOperation.operation.edit()
+                    edit()
                 }
             }
         } while isContinue
     }
     
     
-    // MARK: Modify The Quantity methodorder for Order History
+    // MARK: Modify The Quantity method for Order History
     
     func modifyQuantityInOrderHistory() {
         
@@ -124,7 +124,7 @@ class OrderHistoryOperation {
                                     if (food.availableQuantity <= 0) {
                                         food.availableQuantity = 0
                                         print(" ** Not much quantity available...Available Quantity => \(food.availableQuantity) ** \n")
-                                        UserOperation.operation.edit()
+                                        edit()
                                     }
                                     else {
                                         print(" ** Not much quantity available...Available Quantity => \(food.availableQuantity) ** \n")
@@ -143,7 +143,7 @@ class OrderHistoryOperation {
                         }
                         else {
                             print(" == You entered the wrong ID many times == \n")
-                            UserOperation.operation.edit()
+                            edit()
                         }
                     }
                 }
@@ -153,11 +153,179 @@ class OrderHistoryOperation {
                 }
                 else {
                     print(" == You entered the wrong ID many times == \n")
-                    UserOperation.operation.modify()
+                    CartOperations().modify()
                 }
             }
         }while isContinue
     }
+    
+    
+    // MARK: Order History
+    func orderHistory() {
+        
+        if OrderDetails.isEmpty {
+            print(" --------------------------------- \n")
+            print(" == Your Order History is Empty == \n ")
+            print(" ==  Please  Order  Something   == \n ")
+            print(" --------------------------------- \n")
+            Operation().start()
+        }
+        else {
+            
+            let isContinue: Bool = true
+            repeat {
+                print("")
+                print(" ================================================= \n")
+                print("                   Order History \n")
+                print(" ================================================= \n")
+                print(" \(OrderDetails) \n ")
+                print(" ================================================ \n")
+                print("            ***\n\n 1.CheckOut (Re-Order) \n")
+                print(" 2.Add food to order \n")
+                print(" 3.Clear the history \n")
+                print(" 4.Edit the history to order \n")
+                print(" 5.Back \n\n            ***\n ")
+                print(" Please enter the number of the item you want to go through \n ")
+                if let input = readLine() {
+                    if (Int(input)) == 1 {
+                        reOrderFromOrderHistory()
+                    }
+                    if (Int(input)) == 2 {
+                        OrderHistoryOperation().addToHistory()
+                    }
+                    if (Int(input)) == 3 {
+                        clearOrderHistory()
+                    }
+                    if (Int(input)) == 4 {
+                        edit()
+                    }
+                    if (Int(input)) == 5 {
+                        Foods.foods.backToHome()
+                    }
+                    else {
+                        print(" == Invalid Input == \n ")
+                    }
+                }
+                else {
+                    print(" == Invalid Input == \n ")
+                }
+            }while isContinue
+        }
+    }
+    
+    
+    // MARK: Edit function for Order History to order
+    func edit() {
+        print(" ===================== ")
+        print("  Modify OrderHistory ")
+        print(" ===================== ")
+        print("         ***\n\n 1.Add food To Order\n\n 2.Delete food From Order History\n\n 3.Modify quantity\n\n 4.Back\n\n         *** \n\n ** Please enter the number of the Item you want to Explore ** ")
+        
+        if let input = readLine() {
+            if (Int(input)) == 1 {
+                OrderHistoryOperation().addToHistory()
+            }
+            if (Int(input)) == 2 {
+                OrderHistoryOperation().deleteFromOrderHistory()
+                orderHistory()
+            }
+            if (Int(input)) == 3 {
+                OrderHistoryOperation().modifyQuantityInOrderHistory()
+            }
+            if (Int(input)) == 4 {
+                orderHistory()
+            }
+            else {
+                print(" == Invalid Input == ")
+                edit()
+            }
+        }
+        else {
+            print(" == Invalid Input == ")
+        }
+    }
+
+    
+    
+    // MARK: Again order the same foods
+    func reOrderFromOrderHistory() {
+        print(" ========================================== \n")
+        print(OrderDetails)
+        print(" ========================================== \n")
+        oldOrderTotal()
+        print(" ========================================== \n")
+        print(" ------------------------------------------ \n")
+        print(" ** Please enter the options given below ** \n ")
+        print(" 1.Confirm the Order \n")
+        print(" 2.Back \n ")
+        print(" ------------------------------------------ \n")
+        if let input = readLine() {
+            if (Int(input)) == 1 {
+                OrderDetails.insert(contentsOf: Cart, at: 1)
+                GetUserAddress.getUserAddress.callingPlace()
+            }
+            if (Int(input)) == 2 {
+                orderHistory()
+            }
+        }
+        else {
+            print(" == Invalid Input == \n ")
+        }
+    }
+    
+    
+    // MARK: Clear the Order History
+    func clearOrderHistory() {
+        print(" ------------------------------------------ \n")
+        print(" ** Please enter the options given below ** \n ")
+        print(" 1.Confirm to Clear The Order History \n")
+        print(" 2.Back \n ")
+        print(" ------------------------------------------ \n")
+        if let input = readLine() {
+            if (Int(input)) == 1 {
+                OrderDetails.removeAll()
+                print(" ** Order History Cleared ** \n ")
+                Operation().start()
+            }
+            if (Int(input)) == 2 {
+                Foods.foods.backToOrderHistory()
+            }
+        }
+    }
+    
+    // MARK: For Order History
+    func addingPrinting() {
+        print(" ** The foods are added to your order details now ** \n")
+        OrderHistoryOperation().orderHistory()
+    }
+    
+    
+    func deletingPrinting() {
+        print(" ***  Entered food item is deleted  *** \n")
+        OrderHistoryOperation().orderHistory()
+    }
+    
+    
+    func modificationPrinting() {
+        print(" ** Quantity modified successfully ** \n")
+        print("\(OrderDetails)")
+        OrderHistoryOperation().edit()
+    }
+    
+    
+    func oldOrderTotal() {
+        
+        let allFoods = AllFoods()
+        
+        var totalPrice = 0
+        for food in OrderDetails {
+            totalPrice += food.price!
+        }
+        print(" Total Price == Rs.\(totalPrice)\n ")
+        
+        allFoods.offerCheck(newPrice: totalPrice)
+    }
+    
     
 }
 

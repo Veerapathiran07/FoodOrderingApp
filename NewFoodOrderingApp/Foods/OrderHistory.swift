@@ -50,8 +50,7 @@ class OrderHistory {
             orderHistoryFood.quantity = number + orderHistoryFood.quantity!
             orderHistoryFood.price = orderHistoryFood.price! * orderHistoryFood.quantity!
             food.extraNeed()
-            print(" ** The foods are added to your order details now ** \n")
-            UserOperation.operation.orderHistory()
+            OrderHistoryOperation().addingPrinting()
         }
         else {
             cartItems.id = food.id
@@ -61,30 +60,27 @@ class OrderHistory {
             OrderDetails.append(cartItems)
             food.availableQuantity = food.availableQuantity - number
             food.extraNeed()
-            print(" ** The foods are added to your order details now ** \n")
-            UserOperation.operation.orderHistory()
+            OrderHistoryOperation().addingPrinting()
         }
     }
-    
 
     
     // MARK: Delete method for order history
     
     func deletion(Index: Int) {
         OrderDetails.remove(at: Index)
-        print(" ***  Entered food item is deleted  *** \n")
-        UserOperation.operation.orderHistory()
+        OrderHistoryOperation().deletingPrinting()
+        
     }
     
-
+ 
+    // MARK: Modify quantity method for order history
     
     func new(number: Int, oldPrice: Int, food: AllFoods, orderHistoryFood: CartItems) {
         orderHistoryFood.quantity =  number
         orderHistoryFood.price = oldPrice * number
         food.availableQuantity = food.availableQuantity - number
-        print(" ** Quantity modified successfully ** \n")
-        print("\(OrderDetails)")
-        UserOperation.operation.edit()
+        OrderHistoryOperation().modificationPrinting()
     }
     
 }

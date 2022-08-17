@@ -8,7 +8,7 @@
 import Foundation
 
 
-class CartOperations {
+class CartOperations: Example {
     
     let cartItems = CartItems()
     
@@ -33,7 +33,7 @@ class CartOperations {
                             if (food.availableQuantity <= 0) {
                                 food.availableQuantity = 0
                                 print(" ** Not much quantity available...Available Quantity => \(food.availableQuantity) ** \n")
-                                UserOperation.operation.showCart()
+                                showCart()
                             }
                             else {
                                 print(" ** Not much quantity available...Available Quantity => \(food.availableQuantity) ** \n")
@@ -82,7 +82,7 @@ class CartOperations {
                     }
                     else {
                         print(" == Please enter shown ID's only == \n")
-                        UserOperation.operation.modify()
+                        modify()
                     }
                 }
                 else if deleteCount < 2 {
@@ -91,7 +91,7 @@ class CartOperations {
                 }
                 else {
                     print(" == You entered wrong ID many times == \n")
-                    UserOperation.operation.modify()
+                    modify()
                 }
             }
         } while isContinue
@@ -125,7 +125,7 @@ class CartOperations {
                                     if (food.availableQuantity <= 0) {
                                         food.availableQuantity = 0
                                         print(" ** Not much quantity available...Available Quantity => \(food.availableQuantity) ** \n")
-                                        UserOperation.operation.modify()
+                                        modify()
                                     }
                                     else {
                                         print(" ** Not much quantity available...Available Quantity => \(food.availableQuantity) ** \n")
@@ -144,7 +144,7 @@ class CartOperations {
                         }
                         else {
                             print(" == You entered the wrong ID many times == \n")
-                            UserOperation.operation.modify()
+                            modify()
                         }
                     }
                 }
@@ -154,10 +154,129 @@ class CartOperations {
                 }
                 else {
                     print(" == You entered the wrong ID many times == \n")
-                    UserOperation.operation.modify()
+                    modify()
                 }
             }
         } while isContinue
     }
+    
+    
+    //MARK: Total Function
+    func total()  {
+        
+        let allFoods = AllFoods()
+        
+        var newPrice = 0
+        for cart in Cart {
+            newPrice += cart.price!
+        }
+        
+        print(" Total Price == Rs.\(newPrice)\n ")
+        
+        allFoods.offerCheck(newPrice: newPrice)
+        
+    }
+    
+    
+    //MARK: SHOW CART
+    func showCart() {
+        
+        if Cart.isEmpty {
+            print(" ------------------------------- \n")
+            print(" == No fooditems in your cart == \n")
+            print(" == Please add food to order  == \n ")
+            print(" ------------------------------- \n")
+            Operation().start()
+        }
+        else {
+            let isContinue: Bool = true
+            repeat {
+                print(" ================================================ \n")
+                print("                       CART \n")
+                print(" ================================================ \n")
+                print("\(Cart)\n")
+                print(" ================================================ \n")
+                total()
+                print(" ================================================ \n")
+                print("       ***\n\n 1.Add foods \n")
+                print(" 2.Checkout \n")
+                print(" 3.Modify your cart \n")
+                print(" 4.Back\n\n       *** \n")
+                print(" ** Please enter the number of the Item you want to go through ** \n")
+                if let input = readLine() {
+                    switch input {
+                    case "1":
+                        CartOperations().addToCart()
+                    case "2":
+                        OrderDetails.insert(contentsOf: Cart, at: 0)
+                        GetUserAddress.getUserAddress.callingPlace()
+                    case "3":
+                        modify()
+                    case "4":
+                        Operation().start()
+                    default:
+                        print(" ==  Please enter a valid input to proceed  == \n")
+                    }
+                }
+            }while isContinue
+        }
+    }
+    
+    
+    // MARK: For CART
+    func addPrinting() {
+        print(" The Foods are added to your cart:\n ")
+        showCart()
+    }
+    
+    func deletePrinting() {
+        print(" ***  Entered food item is deleted  *** \n")
+        showCart()
+    }
+    
+    
+    func modifyPrinting() {
+        print(" ** Quantity modified successfully ** \n")
+        print("\(Cart)\n")
+        modify()
+    }
+    
+    
+    //MARK: Ask for Modify The Cart
+    func modify(){
+        
+        let isContinue: Bool = true
+        repeat {
+            print(" ============= ")
+            print("  Modify Cart ")
+            print(" ============= ")
+            print("     ***\n\n 1.Add food item\n\n 2.Delete food item\n\n 3.Modify the quantity\n\n 4.Back\n\n     ***\n\n ** Please enter the number of the Item you want to go through ** \n")
+            if let operation = readLine() {
+                switch operation {
+                case "1":
+                    CartOperations().addToCart()
+                case "2":
+                    if Cart.isEmpty {
+                        print(" == Your cart is empty == \n")
+                    }
+                    else {
+                        CartOperations().del()
+                    }
+                case "3":
+                    if Cart.isEmpty {
+                        print(" == Your cart is empty == \n")
+                    }
+                    else {
+                        CartOperations().mod()
+                    }
+                case "4":
+                    showCart()
+                default:
+                    print(" ==  Please enter a valid input to proceed  == \n")
+                }
+            }
+        } while isContinue
+    }
+
     
 }

@@ -115,7 +115,7 @@ class FoodLoading {
     
     func loadAllFoods (completionHandler:( _ success: Bool) -> Void) {
         
-        let Foods: [AllFoods] = UserOperation.operation.foodsLoading()
+        let Foods: [AllFoods] = Foods.foods.foodsLoading()
         
         if Foods.isEmpty {
             completionHandler(false)
